@@ -20,6 +20,7 @@ We must install three (03) programs:
 ### Install `python3`
 
 ```sh
+# ~$
 sudo apt install python3 python3-pip
 ```
 
@@ -30,24 +31,28 @@ The version of python used is `python 3.10.9`.
 You can install a python virtualenv program in two different ways.
 
 ```sh
+# ~$
 sudo apt install python3-venv
 ```
 
 OR
 
 ```sh
+# ~$
 sudo pip3 install virtualenv
 ```
 
 ### Install `PostgreSQL`
 
 ```sh
+# ~$
 sudo apt install postgresql postgresql-contrib
 ```
 
 For using a `spacial database`, we must to install the following extension:
 
 ```sh
+# ~$
 # PostGIS is an extension of PostgreSQL
 # that allows to process the spacial data like the Polygons,
 # the Points, ...
@@ -59,6 +64,7 @@ You can clone this repository everywhere you want in your machine,
 with the following command lines:
 
 ```sh
+# ~$
 git clone https://github.com/CodiTheck/dmail && cd dmail
 ```
 
@@ -91,24 +97,28 @@ In this cloned directory, you will see the following structure:
 run one of the following commands to create a virtual environment.
 
 ```sh
+# ~$
 python3 -m venv env
 ```
 
 OR
 
 ```sh
+# ~$
 virtualenv env -p python3
 ```
 
 2. Launch environment
 
 ```sh
+# ~$
 source env/bin/activate
 ```
 
 3. You must execute the following command to install the basic dependences:
 
 ```sh
+# ~$
 pip install -r requirements.txt
 ```
 
@@ -117,12 +127,14 @@ The following `SQL` command lines allow to create a `PostgreSQL`
 database for your application:
 
 ```sh
+# ~$
 # To connect to PostgreSQL with ROOT user:
 sudo su - postgres
 
 ```
 
 ```sh
+# ~$
 # To connect to default database (postgres)
 psql
 
@@ -158,6 +170,7 @@ Finally, disconnect from PostgreSQL by pressing `CTRL + D` twice.
 from the `server/.env_example`:
 
 ```sh
+# ~$
 cp server/.env_example server/.env
 ```
 
@@ -191,6 +204,7 @@ PORT=5432
 It's assumed that you are currently in project directory root `dmail`.
 
 ```sh
+# ~$
 mkdir server/static;\
 ./server/manage.py makemigrations;\
 ./server/manage.py migrate
@@ -217,12 +231,14 @@ Running migrations:
 - Then, create a super user that will be used to connect to admin space.
 
 ```sh
+# ~$
 ./server/manage.py createsuperuser
 ```
 
 - Finally to start server, you must execute the following command line:
 
 ```sh
+# ~$
 ./server/manage.py runserver
 ```
 
@@ -244,6 +260,7 @@ We cant go it at this local host link [](http://127.0.0.1:8000/) or [](http://lo
 You can change the IP address and the port of the server with the following command line:
 
 ```sh
+# ~$
 # With this command, we cant make the server listens
 # on the IP address of your local network on the port 8080.
 ./server/manage.py runserver 0.0.0.0:8080
@@ -267,6 +284,7 @@ All work with successfully ! <br/>
 To access it in this cas, you must execute the following command line, in first:
 
 ```sh
+# ~$
 # IF YOU ARE USING LINUX
 # show your IP address of your machine, if it's connected
 # to your local network for example.
@@ -283,6 +301,7 @@ We cant go it at this local host [link](http://yourip:8080/).
 ### Hosting
 
 ```sh
+# ~$
 openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out path_to_certificate.crt -keyout path_to_private_key.key
 ```
 
